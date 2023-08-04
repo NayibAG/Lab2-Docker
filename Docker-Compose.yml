@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  lab2:
+    image: lab2
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+    links:
+      - db
+    
+
